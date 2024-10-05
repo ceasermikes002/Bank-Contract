@@ -16,7 +16,7 @@ contract SimpleBank {
 
     // Withdraw ether from the bank
     function withdraw(uint256 amount) public {
-        require(balances[msg.sender] >= amount, "Insufficient balance");
+        require(balances[msg.sender] >= amount, "Insufficient balance.");
         balances[msg.sender] -= amount;
         payable(msg.sender).transfer(amount);
         emit Withdrawn(msg.sender, amount);
